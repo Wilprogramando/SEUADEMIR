@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: recomeco-em-movimento
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+    disk:
+      name: data
+      mountPath: /opt/render/project/src
+      sizeGB: 1
